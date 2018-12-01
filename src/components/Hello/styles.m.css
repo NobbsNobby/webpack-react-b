@@ -1,6 +1,0 @@
-.hello {
-    background: url(../../logo.svg);
-    & .header {
-        color: red;
-    }
-}
