@@ -25,6 +25,7 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "max-len": [1, 120, 2],
-    "no-console": "off"
+    "no-console": "off",
+    "import/no-unresolved": "off"
   }
 }
