@@ -11,18 +11,19 @@ module.exports = {
   devServer: {
     quiet: true
   },
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "index_bundle.js"
   },
   resolve: {
-    modules: ["node_modules", path.resolve(__dirname, "src")]
+    modules: ["node_modules", path.resolve(__dirname, "src")],
+    extensions: [".ts", ".tsx", ".js", ".json"]
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader"
       },
