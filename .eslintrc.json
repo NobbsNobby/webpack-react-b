@@ -21,7 +21,7 @@
   "plugins": ["import", "jsx-a11y", "flowtype"],
   "rules": {
     "indent": ["error", 4],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["error", "windows"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "max-len": [1, 120, 2],
@@ -41,6 +41,8 @@
     "react/jsx-sort-props": ["error", {
       "callbacksLast": true,
       "shorthandFirst": true
-    }]
+    }],
+    "react/jsx-curly-spacing": ["error", "always"],
+    "jsx-quotes": ["error", "prefer-single"]
   }
 }

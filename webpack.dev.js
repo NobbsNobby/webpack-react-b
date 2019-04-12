@@ -1,6 +1,7 @@
 const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackTemplate = require('html-webpack-template');
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 
 const cssModuleName = /\.m.css$/;
@@ -9,12 +10,13 @@ module.exports = {
   mode: "development",
   devtool: "cheap-eval-source-map",
   devServer: {
+    contentBase: './dist',
     quiet: true
   },
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "index_bundle.js"
+    filename: "index_bundle.js",
+    path: path.resolve(__dirname, "./dist")
   },
   resolve: {
     modules: ["node_modules", path.resolve(__dirname, "src")]
@@ -61,11 +63,18 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      inject: true,
-      template: "./public/index.html"
-    }),
+      inject:     false,
+      template:   HtmlWebpackTemplate,
+      appMountId: 'app',
+      meta:       [
+          {
+              name:    'viewport',
+              content: 'user-scalable=no, width=device-width, initial-scale=1'
+          }
+      ]
+  }),
     new FriendlyErrorsWebpackPlugin()
   ]
 };

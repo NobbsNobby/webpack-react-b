@@ -1,14 +1,16 @@
-import * as React from 'react';
+// @flow
+// Core
+import React, { Component } from 'react';
 import Styles from './styles.m.css';
 
-class App extends React.Component {
-  
+type Props = {/**/}
+
+class App extends Component<Props> {
     render() {
         return (
             <div className = { Styles.app }>
                 <h1 className = { Styles.header }>Everything is ready to start</h1>
             </div>
-    
         );
     }
 }
