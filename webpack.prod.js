@@ -1,6 +1,7 @@
 const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackTemplate = require('html-webpack-template');
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
@@ -60,13 +61,23 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      inject: true,
-      template: "./public/index.html"
+      inject:     false,
+      template:   HtmlWebpackTemplate,
+      appMountId: 'app',
+      meta:       [
+        {
+          name:    'viewport',
+          content: 'user-scalable=no, width=device-width, initial-scale=1'
+        }
+      ]
     }),
     new MiniCssExtractPlugin({
-      filename: "css/style.min.css"
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
     new FriendlyErrorsWebpackPlugin(),
     // new FaviconsWebpackPlugin({
