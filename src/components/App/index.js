@@ -1,6 +1,7 @@
 // @flow
 // Core
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // Instruments
 import Styles from './styles.m.css';
@@ -9,6 +10,12 @@ type Props = {
     /**/
 };
 
+const mapStateToProps = ({ dummyReducer }) => {
+    return {
+        dummy: dummyReducer
+    };
+};
+@connect(mapStateToProps)
 class App extends Component<Props> {
     render() {
         return (

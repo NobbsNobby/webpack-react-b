@@ -1,4 +1,9 @@
 //Core
-// import { put, apply } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 
-export function* worker() {}
+// Instruments
+import { actions } from '../../actions';
+
+export function* worker() {
+    yield put(actions.action());
+}
