@@ -12,7 +12,8 @@ module.exports = {
   devtool: "cheap-eval-source-map",
   devServer: {
     contentBase: "./dist",
-    quiet: true
+    quiet: true,
+    historyApiFallback: true
   },
   entry: "./src/index.js",
   output: {
