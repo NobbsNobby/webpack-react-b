@@ -9,6 +9,9 @@ const logger = createLogger({
 
 const sagaMiddleware = createSagaMiddleware();
 
+if (__DEV__ && !window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
+    console.warn('please install Redux DevTools');
+}
 const composeEnhancers = (__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 const middleware = [ sagaMiddleware ];
 

@@ -10,10 +10,6 @@ import { store } from './init/store';
 // Components
 import App from './components/App';
 
-if(__DEV__) {
-    console.log('dev');
-}
-
 ReactDOM.render(
     <Provider store = { store }>
         <App />
