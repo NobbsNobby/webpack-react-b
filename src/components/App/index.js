@@ -1,25 +1,22 @@
 // Core
-import React, { Component } from 'react';
+import React from 'react';
+import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 // Instruments
 import Styles from './styles.m.css';
-
+import Form from '../Form';
 
 const mapStateToProps = ({ dummyReducer }) => {
-    return {
-        dummy: dummyReducer
-    };
+  return {
+    dummy: dummyReducer
+  };
 };
-@connect(mapStateToProps)
-class App extends Component {
-    render() {
-        return (
-            <div className = { Styles.app }>
-                <h1 className = { Styles.header }>Everything is ready to start</h1>
-            </div>
-        );
-    }
-}
+const App = () => (
+  <div className={ Styles.app }>
+    <h1 className={ Styles.header }>Everything is ready to start</h1>
+    <Link to='/form/'>About</Link>
+    <Route component={ Form } path='/form/' />
+  </div>
+);
 
-export default App;
+export default connect(mapStateToProps)(App);

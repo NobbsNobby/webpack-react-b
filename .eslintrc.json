@@ -22,8 +22,8 @@
   },
   "plugins": ["import", "jsx-a11y", "react-hooks"],
   "rules": {
-    "indent": ["error", 4],
-    "linebreak-style": ["error", "windows"],
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "max-len": [1, 120, 2],
@@ -38,7 +38,8 @@
     "arrow-parens": ["error", "always"],
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "object-curly-spacing": ["error", "always"],
-    "react/jsx-equals-spacing": ["error", "always"],
+//    "react/jsx-equals-spacing": ["error", "always"],
+    "react/jsx-wrap-multilines": 2,
     "react/jsx-space-before-closing": ["error", "always"],
     "react/jsx-sort-props": ["error", {
       "callbacksLast": true,
