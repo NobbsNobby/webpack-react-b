@@ -1,16 +1,16 @@
 // Core
-import { takeEvery, all, call } from 'redux-saga/effects';
+import { takeEvery, all, call } from "redux-saga/effects";
 
 // Types
-import { types } from '../types';
+import { types } from "../types";
 
 // Workers
-import { worker } from './workers';
+import { worker } from "./workers";
 
 export function* watchWorker() {
-    yield takeEvery(types.TYPE, worker);
+  yield takeEvery(types.TYPE, worker);
 }
 
 export function* watchDomain() {
-    yield all([ call(watchWorker) ]);
+  yield all([call(watchWorker)]);
 }

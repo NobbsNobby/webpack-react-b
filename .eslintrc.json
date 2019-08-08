@@ -11,7 +11,8 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/strict",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,7 +25,7 @@
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
+    //    "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "max-len": [1, 120, 2],
     "no-console": "off",
@@ -33,20 +34,23 @@
     "block-scoped-var": "error",
     "max-classes-per-file": "error",
     "no-multi-spaces": "warn",
-    "array-bracket-spacing": ["warn",  "always"],
-    "key-spacing": ["error", { "align": "value" }],
+    "array-bracket-spacing": ["warn", "always"],
+    //    "key-spacing": ["error", { "align": "value" }],
     "arrow-parens": ["error", "always"],
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "object-curly-spacing": ["error", "always"],
-//    "react/jsx-equals-spacing": ["error", "always"],
+    //    "react/jsx-equals-spacing": ["error", "always"],
     "react/jsx-wrap-multilines": 2,
-    "react/jsx-space-before-closing": ["error", "always"],
-    "react/jsx-sort-props": ["error", {
-      "callbacksLast": true,
-      "shorthandFirst": true
-    }],
-    "react/jsx-curly-spacing": ["error", "always"],
-    "jsx-quotes": ["error", "prefer-single"],
+    //    "react/jsx-space-before-closing": ["error", "always"],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true
+      }
+    ],
+    //    "react/jsx-curly-spacing": ["error", "always"],
+    //    "jsx-quotes": ["error", "prefer-single"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }

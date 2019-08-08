@@ -17,32 +17,32 @@ body {
     hsla(210, 100%, 45%, 1)
   );
   &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 50%;
-      background: linear-gradient(
-              to bottom,
-              hsla(0, 0%, 0%, 0.75),
-              ease-in-out,
-              hsla(0, 0%, 0%, 0)
-      );
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0.75),
+      ease-in-out,
+      hsla(0, 0%, 0%, 0)
+    );
   }
 
   &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 50%;
-      background: linear-gradient(
-              to top,
-              hsla(0, 0%, 0%, 0.75),
-              ease-in-out,
-              hsla(0, 0%, 0%, 0)
-      );
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to top,
+      hsla(0, 0%, 0%, 0.75),
+      ease-in-out,
+      hsla(0, 0%, 0%, 0)
+    );
   }
 }

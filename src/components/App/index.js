@@ -1,10 +1,16 @@
 // Core
-import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from "react";
+import { Link, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import { Layout } from "antd";
+const { Header, Footer, Content } = Layout;
+
+// Components
+import HomePage from "pages/HomePage";
+import FormPage from "pages/FormPage";
 // Instruments
-import Styles from './styles.m.css';
-import Form from '../Form';
+import Styles from "./styles.m.css";
+import logo from "theme/assets/logo.jpg";
 
 const mapStateToProps = ({ dummyReducer }) => {
   return {
@@ -12,10 +18,26 @@ const mapStateToProps = ({ dummyReducer }) => {
   };
 };
 const App = () => (
-  <div className={ Styles.app }>
-    <h1 className={ Styles.header }>Everything is ready to start</h1>
-    <Link to='/form/'>About</Link>
-    <Route component={ Form } path='/form/' />
+  <div>
+    <Layout className={Styles.page}>
+      <Header>
+        <nav className={Styles.navigation}>
+          <Link className={Styles.item} to="/">
+            Home
+          </Link>
+          <Link className={Styles.item} to="/form">
+            Form
+          </Link>
+        </nav>
+      </Header>
+      <Content className={Styles.content}>
+        <Route exact component={HomePage} path="/" />
+        <Route component={FormPage} path="/Form/" />
+      </Content>
+      <Footer className={Styles.footer}>
+        <img alt="Nord-Soft logo" src={logo} />
+      </Footer>
+    </Layout>
   </div>
 );
 
