@@ -9,7 +9,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:flowtype/recommended",
     "plugin:jsx-a11y/strict",
     "plugin:import/errors",
     "plugin:import/warnings"
@@ -21,7 +20,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["import", "jsx-a11y", "flowtype"],
+  "plugins": ["import", "jsx-a11y", "react-hooks"],
   "rules": {
     "indent": ["error", 4],
     "linebreak-style": ["error", "windows"],
