@@ -2,8 +2,8 @@
 import { all, call } from "redux-saga/effects";
 
 // Watchers
-import { watchDomain } from "models/__DOMAIN__/saga/watchers";
+import { watchUsers } from "models/list/saga/watchers";
 
 export function* rootSaga() {
-  yield all([ call(watchDomain) ]);
+  yield all([ call(watchUsers) ]);
 }

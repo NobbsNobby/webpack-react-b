@@ -1,38 +1,43 @@
 // Core
 import React from "react";
-import { List, Typography } from "antd";
+import { List, Button } from "antd";
+import { connect } from "react-redux";
 
-// Components
-import HomePage from "pages/HomePage";
-import FormPage from "pages/FormPage";
 // Instruments
 import Styles from "./styles.m.css";
-import logo from "theme/assets/logo.jpg";
 
-const mapStateToProps = ({ dummyReducer }) => {
+//Actions
+import { usersActions } from "models/list/actions";
+
+const mapStateToProps = (state) => {
   return {
-    dummy: dummyReducer
+    users: state.users
   };
 };
 
-const data = [
-  "Racing car sprays burning fuel into crowd.",
-  "Japanese princess to wed commoner.",
-  "Australian walks 100km after outback crash.",
-  "Man charged over missing wedding girl.",
-  "Los Angeles battles huge wildfires."
-];
+const mapDispatchToProps = {
+  fetchUsersAsync: usersActions.fetchUsersAsync
+};
 
-const UserList = () => (
-  <div>
-    <List
-      bordered
-      className={Styles.list}
-      dataSource={data}
-      header={<h3>User List</h3>}
-      renderItem={(item) => <List.Item>{item}</List.Item>}
-    />
-  </div>
-);
+const UserList = ({ users, fetchUsersAsync }) => {
+  console.log(users);
+  return (
+    <div>
+      <List
+        bordered
+        className={Styles.list}
+        dataSource={users.map((i) => i.name)}
+        header={<h3>User List</h3>}
+        renderItem={(item) => <List.Item>{item}</List.Item>}
+      />
+      <Button block type="primary" onClick={fetchUsersAsync}>
+        Fetch Users
+      </Button>
+    </div>
+  );
+};
 
-export default UserList;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserList);

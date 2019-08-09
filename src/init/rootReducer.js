@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 
 //Reducers
-import { DomainReducer } from "models/";
+import { DomainReducer, usersReducer } from "models/index";
 
 export const rootReducer = combineReducers({
-  DomainReducer
+  DomainReducer,
+  users: usersReducer
 });

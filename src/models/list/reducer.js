@@ -1,16 +1,16 @@
 // Types
 import { types } from "./types";
 
-const initialState = {};
+const initialState = [];
 
-const DomainReducer = (state = initialState, action) => {
+const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-  case types.TYPE:
-    return state;
+  case types.FILL_USERS:
+    return action.payload;
 
   default:
     return state;
   }
 };
 
-export default DomainReducer;
+export default usersReducer;

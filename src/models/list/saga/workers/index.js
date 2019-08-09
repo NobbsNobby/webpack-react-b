@@ -1,1 +1,1 @@
-export { worker } from "./worker";
+export { fetchUsers } from "./fetchUsers";
