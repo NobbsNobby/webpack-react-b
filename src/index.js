@@ -5,7 +5,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
 // Instruments
-// import './theme/init.css';
 import { store } from "./init/store";
 
 // Components

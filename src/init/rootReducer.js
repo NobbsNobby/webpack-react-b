@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 
 //Reducers
-import { reducer as dummyReducer } from "../bus/__DOMAIN__/reducer";
+import { DomainReducer } from "models/";
 
 export const rootReducer = combineReducers({
-  dummyReducer
+  DomainReducer
 });

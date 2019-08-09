@@ -1,0 +1,1 @@
+export DomainReducer from './__DOMAIN__/reducer';
