@@ -6,7 +6,6 @@ import { api } from "REST";
 import { usersActions } from "../../actions";
 
 export function* fetchUsers() {
-  // yield put(actions.action());
   try {
     const response = yield apply(api, api.users.fetch);
     const data = yield apply(response, response.json);
@@ -17,5 +16,7 @@ export function* fetchUsers() {
     yield put(usersActions.fillUsers(data));
   } catch (error) {
     console.log(error);
+  } finally {
+    console.log('final fetch');
   }
 }
