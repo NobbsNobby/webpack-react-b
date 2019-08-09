@@ -4,7 +4,7 @@ import { Form, Icon, Input, Button, Checkbox } from "antd";
 // Instruments
 import Styles from "./styles.m.css";
 
-const FormPage = props => {
+const SubmitForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.form.validateFields((err, values) => {
@@ -61,6 +61,6 @@ const FormPage = props => {
   );
 };
 
-const WrappedNormalLoginForm = Form.create({ name: "normal_login" })(FormPage);
+const WrappedNormalLoginForm = Form.create({ name: "normal_login" })(SubmitForm);
 
 export default WrappedNormalLoginForm;

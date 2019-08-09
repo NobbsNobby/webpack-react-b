@@ -6,8 +6,8 @@ import { Layout } from "antd";
 const { Header, Footer, Content } = Layout;
 
 // Components
-import HomePage from "pages/HomePage";
-import FormPage from "pages/FormPage";
+import Home from "pages/Home";
+import Submit from "pages/Submit";
 // Instruments
 import Styles from "./styles.m.css";
 import logo from "theme/assets/logo.jpg";
@@ -31,8 +31,8 @@ const App = () => (
         </nav>
       </Header>
       <Content className={Styles.content}>
-        <Route exact component={HomePage} path="/" />
-        <Route component={FormPage} path="/Form/" />
+        <Route exact component={Home} path="/" />
+        <Route component={Submit} path="/form/" />
       </Content>
       <Footer className={Styles.footer}>
         <img alt="Nord-Soft logo" src={logo} />

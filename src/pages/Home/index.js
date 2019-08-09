@@ -2,8 +2,8 @@
 import React from "react";
 // Instruments
 import Styles from "./styles.m.css";
+// Components
 import UserList from "../../components/UserList";
-
 
 
 const HomePage = () => {
